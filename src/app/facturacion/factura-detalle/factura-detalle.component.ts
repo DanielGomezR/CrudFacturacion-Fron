@@ -11,6 +11,7 @@ import { MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { FacturaModel } from '../models/FacturaModel';
 import { DetalleFacturaModel } from '../models/DetalleFacturaModel';
 import { SwalertServiceService } from '../../utils/swalert-service.service';
+import { faPlus,faPlusCircle,faEraser,faRetweet} from '@fortawesome/free-solid-svg-icons'; 
 
 @Component({
   selector: "app-factura-detalle",
@@ -26,6 +27,12 @@ export class FacturaDetalleComponent implements OnInit {
   formDetalleFactura: FormGroup;
   factura=null;
   ListaDetalleProductos: DetalleFacturaModel[] = [];
+
+  // Fa Fa-incons
+  i_faPlus=faPlus;  
+  i_faEraser=faEraser;
+  i_faPlusCircle=faPlusCircle;
+  i_faRetweet=faRetweet;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
     private formBuilder: FormBuilder,

@@ -1,5 +1,5 @@
 <div  class="container">
-    <div class="card" style="margin-top:50px ;">
+    <div class="" style="margin-top:50px ;">
         <div class="card-body">
             <div class="text-center">
                 <h3>Facturación Electrónica</h3>
@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-md-6">
                     <button class="btn btn-outline-success btn-sd float-right" (click)="ModalAgregarFactura()">
-                        NUEVA
+                        <fa-icon [icon]="i_faPlus"></fa-icon> NUEVA
                     </button>
                 </div>
             </div>
@@ -39,10 +39,10 @@
                                     <td>{{factura.total}}</td>
                                     <td>
                                         <button class="btn btn-outline-info  mr-4" (click)="ModalEditarFactura(factura)">
-                                            EDITAR
+                                            <fa-icon [icon]="i_faPlus"></fa-icon> EDITAR
                                         </button>
                                         <button class="btn btn-outline-danger " (click)="EliminarFactura(factura.id)">
-                                            ANULAR
+                                            <fa-icon [icon]="i_faEraser"></fa-icon> ANULAR
                                         </button>
                                     </td>
                                 </tr>

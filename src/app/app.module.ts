@@ -9,6 +9,7 @@ import { FacturaDetalleComponent } from './facturacion/factura-detalle/factura-d
 import { FacturaComponent } from './facturacion/factura/factura.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,10 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,MatDialogModule,MatButtonModule
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

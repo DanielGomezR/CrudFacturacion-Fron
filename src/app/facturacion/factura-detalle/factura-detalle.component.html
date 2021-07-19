@@ -2,13 +2,9 @@
 <mat-dialog-content class="mat-typography">
     <form [formGroup]="formFactura">
         
-        <div class="card">
+        <div class="">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-6">
-                        <label>Fecha</label>
-                        <input type="date" formControlName="fecha" class="form-control">
-                    </div>
                     <div class="col-md-6">
                         <label>Cliente</label>
                         <select formControlName="idcliente" class="form-control" [class.is-invalid]="ValidarControl('idcliente', formFactura)" >
@@ -17,10 +13,14 @@
                             </option>
                         </select>
                     </div>
+                    <div class="col-md-6">
+                        <label>Fecha</label>
+                        <input type="date" formControlName="fecha" disabled class="form-control">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="card mt-2">
+        <div class=" mt-2">
             <div class="card-body body-padding">
                 <form [formGroup]="formDetalleFactura">
                     <div class="row">
@@ -50,14 +50,14 @@
                     <div class="row mt-3">
                         <div class="col-md-12">
                             <button class="btn btn-outline-warning  float-right" [disabled]="formDetalleFactura.invalid" (click)="AgregarProductoDetalle()">
-                                Agregar
+                                <fa-icon [icon]="i_faPlus"></fa-icon>  Agregar
                             </button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="card mt-2">
+        <div class=" mt-2">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-12">
@@ -81,7 +81,7 @@
                                     <td>{{producto.subtotal | currency:'CAD':'symbol-narrow':'.0-0'}}</td>
                                     <td>
                                         <button class="btn btn-outline-danger " (click)="EliminarProductoDetalle(i)">
-                                            ELIMINAR
+                                            <fa-icon [icon]="i_faEraser"></fa-icon> Quitar
                                         </button>
                                     </td>
                                 </tr>
@@ -97,18 +97,18 @@
                             <label>Subtotal</label>
                             <input formControlName="subtotal" type="number" class="form-control" readonly>
                         </div>
-                    </div>
-                    <div class="row">
+                    <!-- </div>
+                    <div class="row"> -->
                         <div class="col-md-3">
                             <label>% IVA</label>
                             <input type="number" placeholder="16%" value="0" (change)="IvaChange($event.target.value)" class="form-control">
                         </div>
                         <div class="col-md-3">
-                            <label>IVA</label>
+                            <label>$ IVA</label>
                             <input formControlName="iva" type="number" class="form-control" readonly>
                         </div>
-                    </div>
-                    <div class="row">
+                    <!-- </div>
+                    <div class="row"> -->
                         <div class="col-md-3">
                             <label>Total</label>
                             <input formControlName="total" type="number" class="form-control" readonly>
@@ -122,10 +122,10 @@
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
   <button *ngIf="factura===null" class="btn btn-outline-success float-right" [mat-dialog-close]="true" [disabled]="ListaDetalleProductos.length == 0 || formFactura.invalid" (click)="AgregarFactura()">
-    Generar
+    <fa-icon [icon]="i_faPlusCircle"></fa-icon> Generar
 </button>
 <button  *ngIf="factura!==null" class="btn btn-outline-primary float-right" [mat-dialog-close]="true" [disabled]="ListaDetalleProductos.length == 0 || formFactura.invalid" (click)="ActualizarFactura()">
-    Actualizar Factura
+    <fa-icon [icon]="i_faRetweet"></fa-icon> Actualizar Factura
 </button>
 </mat-dialog-actions>
 

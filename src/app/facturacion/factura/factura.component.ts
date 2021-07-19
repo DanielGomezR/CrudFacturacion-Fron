@@ -6,6 +6,7 @@ import { FacturaDetalleComponent } from '../factura-detalle/factura-detalle.comp
 import {MatDialog} from '@angular/material/dialog';
 import { SwalertServiceService } from 'src/app/utils/swalert-service.service';
 import Swal from 'sweetalert2';
+import { faPlus,faEye,faEdit,faEraser } from '@fortawesome/free-solid-svg-icons'; 
 
 @Component({
   selector: "app-factura",
@@ -13,6 +14,13 @@ import Swal from 'sweetalert2';
   styleUrls: ["./factura.component.css"],
 })
 export class FacturaComponent implements OnInit {
+
+   // Fa Fa-incosn
+   i_faPlus=faPlus;
+   i_faEye=faEye;
+   i_faEdit=faEdit;
+   i_faEraser=faEraser;
+
   constructor(
     private _facturaService: FacturaService,
     public dialog: MatDialog,
@@ -38,7 +46,7 @@ export class FacturaComponent implements OnInit {
 
   ModalAgregarFactura(): void {
     const crearRef = this.dialog.open(FacturaDetalleComponent, {
-      height: "95%",
+      height: "85%",
       width: "750px",
     });
 
